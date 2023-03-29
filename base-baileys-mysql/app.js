@@ -13,13 +13,17 @@ const MySQLAdapter = require("@bot-whatsapp/database/mysql");
  * Declaramos las conexiones de MySQL
  */
 const MYSQL_DB_HOST = "localhost";
-const MYSQL_DB_USER = "pepito";
-const MYSQL_DB_PASSWORD = "11111";
-const MYSQL_DB_NAME = "pepito";
+const MYSQL_DB_USER = "cristian";
+const MYSQL_DB_PASSWORD = "123";
+const MYSQL_DB_NAME = "cristian";
 const MYSQL_DB_PORT = "3306";
 
-const flowSecundario = addKeyword(["2", "Siguiente"]).addAnswer([
-  "Aquí tenemos el Flujo Secundario",
+const flowSecundario = addKeyword(["2"]).addAnswer([
+  "*Te comparto el contenido de la página de la Agencia* 📄✏",
+  "👉 Para ingresar a la página oficial escribe *Agartha*",
+  "👉 Para ingresar al catálogo de nuestros productos escribe *Catalogo*",
+  "👉 Para pasar de página escribe *Siguiente*",
+  "👉 Para terminar la conversación escribe *Terminar*",
 ]);
 
 const flowAgartha = addKeyword([
@@ -94,7 +98,7 @@ const flowSaludo = addKeyword(["Hola", "Buenas"])
     "Por último, nos gustaría saber tu correo electrónico para poder comunicarnos contigo",
     { capture: true },
     (ctx, { fallBack }) => {
-      if (!ctx.body.includes("@")) {
+      if (!ctx.body.includes("@" && ".")) {
         return fallBack();
       }
       console.log("Aquí viene todo: ", ctx.body);
@@ -139,7 +143,8 @@ const main = async () => {
     port: MYSQL_DB_PORT,
   });
   const adapterFlow = createFlow([
-    flujoSaludo,
+    flowSaludo,
+    /*flowDatos,*/
     flowAgartha,
     flowTerminar,
     flowCatalogo,
