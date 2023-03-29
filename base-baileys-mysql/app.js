@@ -57,28 +57,77 @@ const flowCatalogo = addKeyword(["catalogo", "cata"]).addAnswer(
   [flowSecundario]
 );
 
-const flujoSaludo = addKeyword(["Hola", "Buenas"])
-  .addAnswer("🙌 Hola bienvenido/a te estas comunicando con *AgencyAgartha!*")
-  .addAnswer("¿Cuál es tu Email?", { capture: true }, (ctx, { fallBack }) => {
-    if (!ctx.body.includes("@")) {
+const flowSaludo = addKeyword(["Hola", "Buenas"])
+  .addAnswer(
+    "🙌 Hola bienvenido/a te estas comunicando con *Agartha Marketing Agency !*"
+  )
+  .addAnswer("¿Cuál es tu Nombre?", { capture: true }, (ctx, { fallBack }) => {
+    if (!ctx.body.includes("")) {
       return fallBack();
     }
     console.log("Aquí viene todo: ", ctx.body);
   })
 
+  .addAnswer(
+    "¿Cuál es tu apellido paterno?",
+    { capture: true },
+    (ctx, { fallBack }) => {
+      if (!ctx.body.includes("")) {
+        return fallBack();
+      }
+      console.log("Aquí viene todo: ", ctx.body);
+    }
+  )
+
+  .addAnswer(
+    "¿Cuál es tu apellido materno?",
+    { capture: true },
+    (ctx, { fallBack }) => {
+      if (!ctx.body.includes("")) {
+        return fallBack();
+      }
+      console.log("Aquí viene todo: ", ctx.body);
+    }
+  )
+
+  .addAnswer(
+    "Por último, nos gustaría saber tu correo electrónico para poder comunicarnos contigo",
+    { capture: true },
+    (ctx, { fallBack }) => {
+      if (!ctx.body.includes("@")) {
+        return fallBack();
+      }
+      console.log("Aquí viene todo: ", ctx.body);
+    }
+  )
+
   .addAnswer("Gracias por la Información, verificando datos de acceso 🕓")
-  .addAnswer("Bienvenido Cristian!", { delay: 1700 })
+  .addAnswer("Datos guardados con éxito !", { delay: 1700 })
+  .addAnswer(
+    /*"*Te comparto el contenido de la página de la Agencia* 📄✏",              -------> Lo ideal sería añadir los siguientes apartados
+                                                                                            (Agartha, Catalogo, Siguiente, Otros).*/
+    /*"👉 Para ingresar a la página oficial escribe *Agartha*",
+    "👉 Para ingresar al catálogo de nuestros productos escribe *Catalogo*",      -------> En este apartado no nos ingresa las secciones,
+    "👉 Para pasar de página escribe *Siguiente*",                                         inmediatamente nos arroja error ( COMPROBADO ).
+    "👉 Para terminar la conversación escribe *Terminar"*,*/
+
+    { capture: true },
+    (ctx, { fallBack }) => {
+      if (!ctx.body.includes("agarta")) {
+        return fallBack();
+      }
+      console.log("Aquí viene todo: ", ctx.body);
+    }
+  )
   .addAnswer(
     [
-      "*Te comparto el contenido de la página de la Agencia*",
-
-      "👉 Para ingresar al link de la Página escribe *Agartha*",
-      "👉 Para ingresar al Catalogo de nuestros Productos escribe *Catalogo*",
-      "👉 Para terminar la conversación escribe *Terminar*",
+      "Aquí encontraras el enlace a la Página Oficial de Agartha",
+      "https://agencyagartha.cl",
+      "\n*2* Para ir atras.",
     ],
     null,
     null,
-    [flowAgartha, flowCatalogo, flowTerminar]
+    [flowSecundario]
   );
 
 const main = async () => {
