@@ -14,9 +14,9 @@ const MySQLAdapter = require("@bot-whatsapp/database/mysql");
  * Declaramos las conexiones de MySQL
  */
 const MYSQL_DB_HOST = "localhost";
-const MYSQL_DB_USER = "cristian";
-const MYSQL_DB_PASSWORD = "123";
-const MYSQL_DB_NAME = "cristian";
+const MYSQL_DB_USER = "pepito";
+const MYSQL_DB_PASSWORD = "11111";
+const MYSQL_DB_NAME = "pepito";
 const MYSQL_DB_PORT = "3306";
 
 const flowSecundario = addKeyword(["Como pagar"]).addAnswer("banco");
