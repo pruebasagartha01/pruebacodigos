@@ -1,0 +1,57 @@
+[handleMsg]:  {
+  key: {
+    remoteJid: '56988207243@s.whatsapp.net',
+    fromMe: false,
+    id: '8BC9120D87C83E7230F2C9BE36A3330B',
+    participant: undefined
+  },
+  messageTimestamp: 1680185034,
+  pushName: 'Esteban',
+  message: Message {
+    conversation: 'Hola',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Hola',
+  from: '56988207243'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '56988207243@s.whatsapp.net',
+    fromMe: false,
+    id: 'FCF2FF4AEADC4355624FC87E5FC00992',
+    participant: undefined
+  },
+  messageTimestamp: 1680185037,
+  pushName: 'Esteban',
+  message: Message {
+    conversation: 'Ese',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Ese',
+  from: '56988207243'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '56988207243@s.whatsapp.net',
+    fromMe: false,
+    id: '6967A3A641A7637BB18E455EEA49E0FF',
+    participant: undefined
+  },
+  messageTimestamp: 1680185046,
+  pushName: 'Esteban',
+  message: Message {
+    conversation: 'Esteban',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Esteban',
+  from: '56988207243'
+}
